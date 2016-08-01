@@ -70,9 +70,9 @@ maju.js
 
 ### maju.on
 
-    Simple wrapper for addEventListener.
-    Each element that was returned by `maju.find` has a method `on` attached to
-    it.
+  Simple wrapper for addEventListener.
+  Each element that was returned by `maju.find` has a method `on` attached to
+  it.
 
       maju.find('a').get(0).on(function(evt){
         evt.preventDefault();
