@@ -1,10 +1,10 @@
 maju.js
 =======
 
-[M]arco's
+**M**arco's
 
-[A]wesome
+**A**wesome
 
-[J]avascript
+**J**avascript
 
-[U]tils
+**U**tils
