@@ -1,4 +1,4 @@
-window.maju.prototype.Ajax = ( opts ) ->
+window.maju.prototype.ajax = ( opts ) ->
   opts = opts || {}
   opts.cb = opts.cb || () -> return
   xhr = new XMLHttpRequest()
