@@ -25,12 +25,12 @@ maju.js
   Simple ajax request wrapper.
 
     maju.ajax({
-      url: 'https://api.aloha.li/getWeatherInfo',
+      url: '/pokemon.json',
       method: 'POST',
       cache: true,
       params: {
         format: 'json'
-        zipcode: '53757'
+        query: 'all'
       }
       cb: function( err, result ) {
         if (!err) {
