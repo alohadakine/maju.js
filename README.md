@@ -1,4 +1,10 @@
-baju.js
+maju.js
 =======
 
-Marco's Awesome Javascript Utils
+[M]arco's
+
+[A]wesome
+
+[J]avascript
+
+[U]tils
