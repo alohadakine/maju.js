@@ -28,7 +28,17 @@ window.maju.prototype.find = ( sel, ref ) ->
         return window.maju.after this, afterEl
       el.before = ( beforeEl ) ->
         return window.maju.before this, beforeEl
+      el.parent = () ->
+        return window.maju.parent this
+      el.next = () ->
+        return window.maju.next this
+      el.prev = () ->
+        return window.maju.prev this
+      el.nodes = () ->
+        return window.maju.nodes this
       el_arr.push el
+    el_arr.each = ( cb ) ->
+      return window.maju.each this, cb
     el_arr.get = ( index ) ->
       return this[index]
   el_arr
