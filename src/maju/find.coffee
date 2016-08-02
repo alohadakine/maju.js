@@ -23,8 +23,11 @@ window.maju.prototype.find = ( sel, ref ) ->
       el.prepend = ( prependEl ) ->
         return window.maju.prepend this, prependEl
       el.append = ( appendEl ) ->
-        console.log this
         return window.maju.append this, appendEl
+      el.after = ( afterEl ) ->
+        return window.maju.after this, afterEl
+      el.before = ( beforeEl ) ->
+        return window.maju.before this, beforeEl
       el_arr.push el
     el_arr.get = ( index ) ->
       return this[index]
