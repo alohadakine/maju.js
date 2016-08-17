@@ -40,10 +40,11 @@ LocalStorage = () ->
     cb totalData.length
     return
   @GetMaximumSize = ( cb ) ->
-    backup = localStorage_getBackup()
+    backup = GetBackup()
     localStorage.clear()
     max = @GetRemainingSpace ( max ) ->
       ApplyBackup backup
       cb max
       return
     return
+  @
