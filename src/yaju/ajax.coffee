@@ -1,4 +1,4 @@
-window.maju.prototype.ajax = ( opts ) ->
+window.yaju.prototype.ajax = ( opts ) ->
   opts = opts || {}
   opts.method = opts.method.toUpperCase() || 'GET'
   opts.cb = opts.cb || () -> return

@@ -1,2 +1,0 @@
-window.maju = () ->
-  return

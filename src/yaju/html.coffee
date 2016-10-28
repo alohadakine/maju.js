@@ -1,4 +1,4 @@
-window.maju.prototype.html = ( el, value ) ->
+window.yaju.prototype.html = ( el, value ) ->
   returnvalue = el
   if value
     el.innerHTML = value

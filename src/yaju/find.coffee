@@ -1,4 +1,4 @@
-window.maju.prototype.find = ( sel, ref ) ->
+window.yaju.prototype.find = ( sel, ref ) ->
   el_arr = []
   if sel
     if typeof sel != 'object'
@@ -13,32 +13,32 @@ window.maju.prototype.find = ( sel, ref ) ->
         els = [sel]
     for el in els
       el.find = ( sel ) ->
-        return window.maju.find sel, this
+        return window.yaju.find sel, this
       el.on = ( eventName, cb ) ->
-        return window.maju.on this, eventName, cb
+        return window.yaju.on this, eventName, cb
       el.attr = ( key, value ) ->
-        return window.maju.attr this, key, value
+        return window.yaju.attr this, key, value
       el.html = ( value ) ->
-        return window.maju.html this, value
+        return window.yaju.html this, value
       el.prepend = ( prependEl ) ->
-        return window.maju.prepend this, prependEl
+        return window.yaju.prepend this, prependEl
       el.append = ( appendEl ) ->
-        return window.maju.append this, appendEl
+        return window.yaju.append this, appendEl
       el.after = ( afterEl ) ->
-        return window.maju.after this, afterEl
+        return window.yaju.after this, afterEl
       el.before = ( beforeEl ) ->
-        return window.maju.before this, beforeEl
+        return window.yaju.before this, beforeEl
       el.parent = () ->
-        return window.maju.parent this
+        return window.yaju.parent this
       el.next = () ->
-        return window.maju.next this
+        return window.yaju.next this
       el.prev = () ->
-        return window.maju.prev this
+        return window.yaju.prev this
       el.nodes = () ->
-        return window.maju.nodes this
+        return window.yaju.nodes this
       el_arr.push el
     el_arr.each = ( cb ) ->
-      return window.maju.each this, cb
+      return window.yaju.each this, cb
     el_arr.get = ( index ) ->
       return this[index]
   el_arr

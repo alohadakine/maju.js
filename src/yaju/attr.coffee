@@ -1,4 +1,4 @@
-window.maju.prototype.attr = ( el, key, value ) ->
+window.yaju.prototype.attr = ( el, key, value ) ->
   returnvalue = el
   if value
     el.setAttribute key, value
