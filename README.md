@@ -22,6 +22,7 @@ yaju.js
   - yaju.domready
   - yaju.find
   - yaju.html
+  - yaju.loadjs
   - yaju.on
   - yaju.prepend
 
@@ -135,6 +136,37 @@ yaju.js
     yaju.find('a').get(0).html('This is a Hyperlink.');
 
 
+
+### yaju.loadjs
+
+  Easy to use JavaScript file loader.
+  Create a `<script>` tag and fires a callback function.
+
+      yaju.loadjs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js', function( err, obj ) {
+        if ( err ) {
+          alert('error loading js file..');
+          return;
+        }
+        alert('all good..');
+      });
+
+  or multiple files at once..
+
+      var jsfiles = [
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'
+      ];
+      var loaded = [];
+      yaju.loadjs(jsfiles, function( err, obj ) {
+        if ( err ) {
+          alert('error loading js file..');
+          return;
+        }
+        loaded.push(obj.src);
+        if (jsfiles.length === loaded.length) {
+          alert('all files loaded..');
+        }
+      });
 
 ### yaju.on
 
