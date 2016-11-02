@@ -16,9 +16,11 @@
   window.yaju.prototype.ajax = function(opts) {
     var formatParams, getTimestamp, header, params, xhr;
     opts = opts || {};
-    opts.method = opts.method.toUpperCase() || 'GET';
+    opts.method = opts.method || 'GET';
+    opts.method = opts.method.toUpperCase();
     opts.cb = opts.cb || function() {};
     opts.params = opts.params || {};
+    opts.requestContentType = opts.requestContentType || 'application/x-www-form-urlencoded';
     getTimestamp = function() {
       return Math.floor(Date.now() / 1000);
     };
@@ -43,6 +45,7 @@
       }
     }
     xhr.open(opts.method, opts.url);
+    xhr.setRequestHeader('Content-type', opts.requestContentType);
     if (opts.headers) {
       for (header in opts.headers) {
         xhr.setRequestHeader(header.key, header.value);
@@ -52,7 +55,7 @@
       xhr.send(null);
     } else {
       if (params.length) {
-        xhr.send('?' + params.join('&'));
+        xhr.send(params.join('&'));
       } else {
         xhr.send(null);
       }

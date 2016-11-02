@@ -1,8 +1,11 @@
 window.yaju.prototype.ajax = ( opts ) ->
   opts = opts || {}
-  opts.method = opts.method.toUpperCase() || 'GET'
+  opts.method = opts.method || 'GET'
+  opts.method = opts.method.toUpperCase()
   opts.cb = opts.cb || () -> return
   opts.params = opts.params || {}
+  opts.requestContentType = opts.requestContentType ||
+      'application/x-www-form-urlencoded'
   getTimestamp = () ->
     Math.floor(Date.now() / 1000)
   formatParams = ( params ) ->
@@ -22,6 +25,7 @@ window.yaju.prototype.ajax = ( opts ) ->
     else
       opts.url = opts.url + '&_nocache=' + getTimestamp()
   xhr.open opts.method, opts.url
+  xhr.setRequestHeader 'Content-type', opts.requestContentType
   if opts.headers
     for header of opts.headers
       xhr.setRequestHeader header.key, header.value
@@ -29,7 +33,7 @@ window.yaju.prototype.ajax = ( opts ) ->
     xhr.send null
   else
     if params.length
-      xhr.send '?' + params.join '&'
+      xhr.send params.join('&')
     else
       xhr.send null
   xhr.onreadystatechange = () ->
