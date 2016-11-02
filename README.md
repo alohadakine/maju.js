@@ -13,18 +13,18 @@ yaju.js
 
 ## Methods
 
-  - yaju.after
-  - yaju.ajax
-  - yaju.append
-  - yaju.attr
-  - yaju.before
-  - yaju.create
-  - yaju.domready
-  - yaju.find
-  - yaju.html
-  - yaju.loadjs
-  - yaju.on
-  - yaju.prepend
+  - [yaju.after](#yayuafter)
+  - [yaju.ajax](#yajuajax)
+  - [yaju.append](#yayuappend)
+  - [yaju.attr](#yajuattr)
+  - [yaju.before](#yajubefore)
+  - [yaju.create](#yajucreate)
+  - [yaju.domready](#yajudomready)
+  - [yaju.find](#yajufind)
+  - [yaju.html](#yajuhtml)
+  - [yaju.loadjs](#yajuloadjs)
+  - [yaju.on](#yajuon)
+  - [yaju.prepend](#yajuprepend)
 
 
 
@@ -47,6 +47,13 @@ yaju.js
       url: '/pokemon.json',
       method: 'POST',
       cache: true,
+      requestContentType: 'application/x-www-form-urlencoded',
+      headers: [
+        {
+          key: 'Foo',
+          value: 'Moo'
+        }
+      ]
       params: {
         format: 'json'
         query: 'all'
