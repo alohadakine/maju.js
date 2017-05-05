@@ -11,18 +11,18 @@ re.js
 
 ## Methods
 
-  - [re.after](#yayuafter)
-  - [re.ajax](#yajuajax)
-  - [re.append](#yayuappend)
-  - [re.attr](#yajuattr)
-  - [re.before](#yajubefore)
-  - [re.create](#yajucreate)
-  - [re.domready](#yajudomready)
-  - [re.find](#yajufind)
-  - [re.html](#yajuhtml)
-  - [re.loadjs](#yajuloadjs)
-  - [re.on](#yajuon)
-  - [re.prepend](#yajuprepend)
+  - [re.after](#reafter)
+  - [re.ajax](#reajax)
+  - [re.append](#reppend)
+  - [re.attr](#reattr)
+  - [re.before](#rebefore)
+  - [re.create](#rereate)
+  - [re.domready](#reomready)
+  - [re.find](#refind)
+  - [re.html](#rehtml)
+  - [re.loadjs](#reloadjs)
+  - [re.on](#reon)
+  - [re.prepend](#reprepend)
 
 
 
