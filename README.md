@@ -1,49 +1,47 @@
-yaju.js
+re.js
 =======
 
-  **Y**zzis
+  **RE**usable
 
-  **A**wesome
+  **J**avaScript
 
-  **J**avascript
-
-  **U**tils
+  **S**nippets
 
 
 
 ## Methods
 
-  - [yaju.after](#yayuafter)
-  - [yaju.ajax](#yajuajax)
-  - [yaju.append](#yayuappend)
-  - [yaju.attr](#yajuattr)
-  - [yaju.before](#yajubefore)
-  - [yaju.create](#yajucreate)
-  - [yaju.domready](#yajudomready)
-  - [yaju.find](#yajufind)
-  - [yaju.html](#yajuhtml)
-  - [yaju.loadjs](#yajuloadjs)
-  - [yaju.on](#yajuon)
-  - [yaju.prepend](#yajuprepend)
+  - [re.after](#yayuafter)
+  - [re.ajax](#yajuajax)
+  - [re.append](#yayuappend)
+  - [re.attr](#yajuattr)
+  - [re.before](#yajubefore)
+  - [re.create](#yajucreate)
+  - [re.domready](#yajudomready)
+  - [re.find](#yajufind)
+  - [re.html](#yajuhtml)
+  - [re.loadjs](#yajuloadjs)
+  - [re.on](#yajuon)
+  - [re.prepend](#yajuprepend)
 
 
 
-### yaju.after
+### re.after
 
   Wrapper for appending elements `after` some element.
 
-    var newListElement = yaju.create('li')
+    var newListElement = re.create('li')
       .attr('style', 'color:red;').html('New List Element');
     // Appends a new list element after the 3rd li found in the DOM
-    yaju.find('li').get(2).after(newListElement);
+    re.find('li').get(2).after(newListElement);
 
 
 
-### yaju.ajax
+### re.ajax
 
   Simple ajax request wrapper.
 
-    yaju.ajax({
+    re.ajax({
       url: '/pokemon.json',
       method: 'POST',
       cache: true,
@@ -67,25 +65,25 @@ yaju.js
 
 
 
-### yaju.append
+### re.append
 
   Wrapper for `appendChild`.
 
-    var newListElement = yaju.create('li')
+    var newListElement = re.create('li')
       .attr('style', 'color:red;').html('New List Element');
-    yaju.find('ul').get(0).append(newListElement);
+    re.find('ul').get(0).append(newListElement);
 
 
 
-### yaju.attr
+### re.attr
 
   Wrapper for `setAttribute` and `getAttribute`.
 
     // retrieve `href` value of first link
-    yaju.find('a').get(0).attr('href')
+    re.find('a').get(0).attr('href')
 
     // set href value of first link
-    yaju.find('a').get(0).attr('href', '#foo');
+    re.find('a').get(0).attr('href', '#foo');
 
 
 
@@ -93,40 +91,40 @@ yaju.js
 
   Wrapper for `insertBefore`.
 
-    var newFirstListElement = yaju.create('li').html('First List Element');
+    var newFirstListElement = re.create('li').html('First List Element');
     // Insert `newFirstListElement` before the first `li` found.
-    yaju.find('li').get(0).before(newFirstListElement);
+    re.find('li').get(0).before(newFirstListElement);
 
 
 
-### yaju.create
+### re.create
 
   Wrapper for `document.createElement`.
 
-    yaju.create('input')
+    re.create('input')
       .attr('type', 'text')
       .attr('placeholder', 'E-Mail');
 
 
 
-### yaju.domready
+### re.domready
 
   Simple domready wrapper.
 
-    yaju.domready(function(){
+    re.domready(function(){
       alert('dom is ready!');
     });
 
 
 
-### yaju.find
+### re.find
 
   Advanced `querySelectorAll` with attaching convenience methods to elements.
   This method always returns an array of objects and you either need to use the
   `get` method or the `find('selector')[3]` element by index method to get the
   element.
 
-    yaju.find('ul').get(0)
+    re.find('ul').get(0)
         .find('li').get(2)
         .find('a').get(0)
         .on('click', function(evt){
@@ -136,20 +134,20 @@ yaju.js
 
 
 
-### yaju.html
+### re.html
 
   Wrapper for `innerHTML`.
 
-    yaju.find('a').get(0).html('This is a Hyperlink.');
+    re.find('a').get(0).html('This is a Hyperlink.');
 
 
 
-### yaju.loadjs
+### re.loadjs
 
   Easy to use JavaScript file loader.
   Create a `<script>` tag and fires a callback function.
 
-      yaju.loadjs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js', function( err, obj ) {
+      re.loadjs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js', function( err, obj ) {
         if ( err ) {
           alert('error loading js file..');
           return;
@@ -164,7 +162,7 @@ yaju.js
         'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'
       ];
       var loaded = [];
-      yaju.loadjs(jsfiles, function( err, obj ) {
+      re.loadjs(jsfiles, function( err, obj ) {
         if ( err ) {
           alert('error loading js file..');
           return;
@@ -175,24 +173,24 @@ yaju.js
         }
       });
 
-### yaju.on
+### re.on
 
   Simple wrapper for addEventListener.
-  Each element that was returned by `yaju.find` has a method `on` attached to
+  Each element that was returned by `re.find` has a method `on` attached to
   it.
 
-      yaju.find('a').get(0).on(function(evt){
+      re.find('a').get(0).on(function(evt){
         evt.preventDefault();
         alert('click');
       });
 
 
 
-### yaju.prepend
+### re.prepend
 
   Wrapper for `insertBefore`.
 
-    var newFirstListElement = yaju.create('li').html('First List Element');
+    var newFirstListElement = re.create('li').html('First List Element');
     // Insert `newFirstListElement` before the first `li` found.
-    yaju.find('li').get(0).prepend(newFirstListElement);
+    re.find('li').get(0).prepend(newFirstListElement);
 
