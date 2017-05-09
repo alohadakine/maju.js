@@ -1,2 +1,0 @@
-window.yaju = () ->
-  return

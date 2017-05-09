@@ -1,1 +1,0 @@
-window.yaju.prototype.plugins = {}

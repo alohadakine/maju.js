@@ -1,0 +1,1 @@
+window.re.prototype.plugins = {};

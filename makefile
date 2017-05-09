@@ -1,9 +1,7 @@
-all: coffee concat construct minify
-coffee:
-	coffee -c src
+all: concat construct minify
 concat:
-	cat src/yaju.js src/yaju/*.js > dist/yaju.js
+	cat src/re.js src/re/*.js > dist/re.js
 construct:
-	echo "window.yaju = new window.yaju();" >> dist/yaju.js
+	echo "window.re = new window.re();" >> dist/re.js
 minify:
-	minify dist/yaju.js > dist/yaju.min.js
+	minify dist/re.js > dist/re.min.js
