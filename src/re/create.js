@@ -1,6 +1,9 @@
-window.re.prototype.create = function(name, contents, attrs) {
+window.re.prototype.create = function(name, contents, attrs, is) {
 	var el, contentsCallback, attrsCallback;
-	el = document.createElement(name);
+  if (is)
+    el = document.createElement(name, is);
+  else
+    el = document.createElement(name);
 	contentsCallback = function(content) {
 		el.appendChild(content);
 	};
