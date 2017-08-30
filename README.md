@@ -11,18 +11,29 @@ re.js
 
 ## Methods
 
+  - [re.adBlockEnabled](#readblockenabled)
   - [re.after](#reafter)
   - [re.ajax](#reajax)
   - [re.append](#reppend)
   - [re.attr](#reattr)
   - [re.before](#rebefore)
-  - [re.create](#rereate)
+  - [re.create](#recreate)
   - [re.domready](#reomready)
   - [re.find](#refind)
   - [re.html](#rehtml)
   - [re.loadjs](#reloadjs)
   - [re.on](#reon)
   - [re.prepend](#reprepend)
+
+
+
+### re.adBlockEnabled
+
+  Check if user is using an AdBlocker
+
+    re.adBlockEnabled(function(adBlockEnabled){
+      window.console.log("Client " + ((adBlockEnabled) ? "is" : "isn't") + " using AdBlock");
+    });
 
 
 
