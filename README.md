@@ -98,7 +98,7 @@ re.js
 
 
 
-### yaju.before
+### re.before
 
   Wrapper for `insertBefore`.
 

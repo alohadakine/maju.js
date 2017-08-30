@@ -1,4 +1,22 @@
 window.re = function() {};
+window.re.prototype.adBlockEnabled = function(cb) {
+        var js = document.createElement('script');
+        js.src = 'https://js.revsci.net/gateway/gw.js';
+        js.onerror = function() {
+                // AdBlock is enabled
+                cb(true);
+                // Clean up
+                this.parentNode.removeChild(this);
+        };
+        js.onload = function() {
+                // AdBlock is NOT enabled
+                cb(false);
+                // Clean up
+                this.parentNode.removeChild(this);
+        };
+        document.body.appendChild(js);
+};
+
 window.re.prototype.after = function(el, afterEl) {
 	el.parentNode.insertBefore(afterEl, el.nextElementSibling);
 	return el;
@@ -86,9 +104,30 @@ window.re.prototype.before = function(el, beforeEl) {
 	return el;
 };
 
-window.re.prototype.create = function(name) {
-	var el;
-	el = document.createElement(name);
+window.re.prototype.create = function(name, contents, attrs, is) {
+	var el, contentsCallback, attrsCallback;
+  if (is)
+    el = document.createElement(name, is);
+  else
+    el = document.createElement(name);
+	contentsCallback = function(content) {
+		el.appendChild(content);
+	};
+	attrsCallback = function(attr) {
+		el.setAttribute(attr[0], attr[1]);
+	};
+	if (contents) {
+		if (typeof contents === 'string') {
+			el.innerHTML = contents;
+		} else if (typeof contents === 'object' && contents.length) {
+			contents.forEach(contentsCallback);
+		} else if (typeof contents === 'object' && !contents.length) {
+			el.appendChild(contents);
+		}
+	}
+	if (attrs) {
+		attrs.forEach(attrsCallback);
+	}
 	return window.re.find(el).get(0);
 };
 
