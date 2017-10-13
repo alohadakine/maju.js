@@ -1,6 +1,6 @@
-window.re.prototype.adBlockEnabled = function(cb) {
-        var js = document.createElement('script');
-        js.src = 'https://js.revsci.net/gateway/gw.js';
+re.prototype.adBlockEnabled = function(cb) {
+        var js = document.createElement("script");
+        js.src = "https://js.revsci.net/gateway/gw.js";
         js.onerror = function() {
                 // AdBlock is enabled
                 cb(true);

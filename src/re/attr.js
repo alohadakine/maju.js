@@ -1,4 +1,4 @@
-window.re.prototype.attr = function(el, key, value) {
+re.prototype.attr = function(el, key, value) {
 	var returnvalue;
 	returnvalue = el;
 	if (value) {

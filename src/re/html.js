@@ -1,4 +1,4 @@
-window.re.prototype.html = function(el, value) {
+re.prototype.html = function(el, value) {
 	var returnvalue;
 	returnvalue = el;
 	if (typeof value === "string") {

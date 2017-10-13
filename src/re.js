@@ -1,1 +1,1 @@
-window.re = function() {};
+var re = function() {};

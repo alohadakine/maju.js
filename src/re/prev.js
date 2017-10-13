@@ -1,4 +1,4 @@
-window.re.prototype.prev = function(el) {
-	return window.re.find(el.previousElementSibling).get(0);
+re.prototype.prev = function(el) {
+	return re.find(el.previousElementSibling).get(0);
 };
 

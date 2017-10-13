@@ -1,4 +1,4 @@
-window.re.prototype.create = function(name, contents, attrs, is) {
+re.prototype.create = function(name, contents, attrs, is) {
 	var el, contentsCallback, attrsCallback;
   if (is)
     el = document.createElement(name, is);
@@ -11,17 +11,17 @@ window.re.prototype.create = function(name, contents, attrs, is) {
 		el.setAttribute(attr[0], attr[1]);
 	};
 	if (contents) {
-		if (typeof contents === 'string') {
+		if (typeof contents === "string") {
 			el.innerHTML = contents;
-		} else if (typeof contents === 'object' && contents.length) {
+		} else if (typeof contents === "object" && contents.length) {
 			contents.forEach(contentsCallback);
-		} else if (typeof contents === 'object' && !contents.length) {
+		} else if (typeof contents === "object" && !contents.length) {
 			el.appendChild(contents);
 		}
 	}
 	if (attrs) {
 		attrs.forEach(attrsCallback);
 	}
-	return window.re.find(el).get(0);
+	return re.find(el).get(0);
 };
 

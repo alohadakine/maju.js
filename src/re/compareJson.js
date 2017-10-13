@@ -1,4 +1,4 @@
-window.re.prototype.compareJson = function(el) {
+re.prototype.compareJson = function(el) {
         var aIsInB = function(a, b) {
                 for (var prop in a) {
                         if (a.hasOwnProperty(prop)) {
