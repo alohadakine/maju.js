@@ -30,89 +30,100 @@ re.js
 
 ### re.adBlockEnabled
 
-  Check if user is using an AdBlocker
+Check if user is using an AdBlocker
 
-    re.adBlockEnabled(function(adBlockEnabled){
-      window.console.log("Client " + ((adBlockEnabled) ? "is" : "isn't") + " using AdBlock");
-    });
+```javascript
+re.adBlockEnabled(function(adBlockEnabled){
+        window.console.log("Client " + ((adBlockEnabled) ? "is" : "isn't") + " using AdBlock");
+});
+```
 
 
 
 ### re.after
 
-  Wrapper for appending elements `after` some element.
+Wrapper for appending elements `after` some element.
 
-    var newListElement = re.create('li')
-      .attr('style', 'color:red;').html('New List Element');
-    // Appends a new list element after the 3rd li found in the DOM
-    re.find('li').get(2).after(newListElement);
+```javascript
+var newListElement = re.create("li")
+        .attr("style", "color:red;").html("New List Element");
+// Appends a new list element after the 3rd li found in the DOM
+re.find("li").get(2).after(newListElement);
+```
 
 
 
 ### re.ajax
 
-  Simple ajax request wrapper.
+Simple ajax request wrapper.
 
-    re.ajax({
-      url: '/pokemon.json',
-      method: 'POST',
-      cache: true,
-      requestContentType: 'application/x-www-form-urlencoded',
-      headers: [
-        {
-          key: 'Foo',
-          value: 'Moo'
+```javascript
+re.ajax({
+        url: "/pokemon.json",
+        method: "POST",
+        cache: true,
+        requestContentType: "application/x-www-form-urlencoded",
+        headers: [
+                {
+                        key: "Foo",
+                        value: "Moo"
+                }
+        ]
+        params: {
+                format: "json"
+                query: "all"
         }
-      ]
-      params: {
-        format: 'json'
-        query: 'all'
-      }
-      cb: function( err, result ) {
-        if (!err) {
-          console.log(result);
+        cb: function( err, result ) {
+                if (!err)
+                        console.log(result);
         }
-      }
-    });
+});
+```
 
 
 
 ### re.append
 
-  Wrapper for `appendChild`.
+Wrapper for `appendChild`.
 
-    var newListElement = re.create('li')
-      .attr('style', 'color:red;').html('New List Element');
-    re.find('ul').get(0).append(newListElement);
+```javascript
+var newListElement = re.create("li")
+        .attr("style", "color:red;").html("New List Element");
+re.find("ul").get(0).append(newListElement);
+```
 
 
 
 ### re.attr
 
-  Wrapper for `setAttribute` and `getAttribute`.
+Wrapper for `setAttribute` and `getAttribute`.
 
-    // retrieve `href` value of first link
-    re.find('a').get(0).attr('href')
+```javascript
+// retrieve `href` value of first link
+re.find("a").get(0).attr("href")
 
-    // set href value of first link
-    re.find('a').get(0).attr('href', '#foo');
+// set href value of first link
+re.find("a").get(0).attr("href", "#foo");
+```
 
 
 
 ### re.before
 
-  Wrapper for `insertBefore`.
+Wrapper for `insertBefore`.
 
-    var newFirstListElement = re.create('li').html('First List Element');
-    // Insert `newFirstListElement` before the first `li` found.
-    re.find('li').get(0).before(newFirstListElement);
+```javascript
+var newFirstListElement = re.create("li").html("First List Element");
+// Insert `newFirstListElement` before the first `li` found.
+re.find("li").get(0).before(newFirstListElement);
+```
 
 
 
 ### re.compareJson
 
-  Compares to JSON structures and returns either `true` if they are _identical_
-  in terms of properties, or `false` if they don't have each others properties.
+Compares to JSON structures and returns either `true` if they are _identical_
+in terms of properties, or `false` if they don't have each others properties.
 
 ```javascript
 var json1 = {
@@ -147,98 +158,109 @@ console.log(re.compareJson(json3, json4);
 
 ### re.create
 
-  Wrapper for `document.createElement`.
+Wrapper for `document.createElement`.
 
-    re.create('input')
-      .attr('type', 'text')
-      .attr('placeholder', 'E-Mail');
+```javascript
+re.create("input")
+        .attr("type", "text")
+        .attr("placeholder", "E-Mail");
+```
 
 
 
 ### re.domready
 
-  Simple domready wrapper.
+Simple domready wrapper.
 
-    re.domready(function(){
-      alert('dom is ready!');
-    });
+```javascript
+re.domready(function() {
+        alert("dom is ready!");
+});
+```
 
 
 
 ### re.find
 
-  Advanced `querySelectorAll` with attaching convenience methods to elements.
-  This method always returns an array of objects and you either need to use the
-  `get` method or the `find('selector')[3]` element by index method to get the
-  element.
+Advanced `querySelectorAll` with attaching convenience methods to elements.
+This method always returns an array of objects and you either need to use the
+`get` method or the `find("selector")[3]` element by index method to get the
+element.
 
-    re.find('ul').get(0)
-        .find('li').get(2)
-        .find('a').get(0)
-        .on('click', function(evt){
-          evt.preventDefault();
-          alert('click');
+```javascript
+re.find("ul").get(0)
+        .find("li").get(2)
+        .find("a").get(0)
+        .on("click", function(evt) {
+                evt.preventDefault();
+                alert("click");
         });
+```
 
 
 
 ### re.html
 
-  Wrapper for `innerHTML`.
+Wrapper for `innerHTML`.
 
-    re.find('a').get(0).html('This is a Hyperlink.');
+```javascript
+re.find("a").get(0).html("This is a Hyperlink.");
+```
 
 
 
 ### re.loadjs
 
-  Easy to use JavaScript file loader.
-  Create a `<script>` tag and fires a callback function.
+Easy to use JavaScript file loader.
+Create a `<script>` tag and fires a callback function.
 
-      re.loadjs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js', function( err, obj ) {
-        if ( err ) {
-          alert('error loading js file..');
-          return;
-        }
-        alert('all good..');
-      });
+```javascript
+re.loadjs("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js", function(err, obj) {
+        if (err)
+                return console.log('error loading js file..');
+        alert("all good..");
+});
+```
 
-  or multiple files at once..
+or multiple files at once..
 
-      var jsfiles = [
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'
-      ];
-      var loaded = [];
-      re.loadjs(jsfiles, function( err, obj ) {
-        if ( err ) {
-          alert('error loading js file..');
-          return;
-        }
+```javascript
+var jsfiles = [
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
+];
+var loaded = [];
+re.loadjs(jsfiles, function(err, obj) {
+        if (err)
+                return console.log("error loading js file..");
         loaded.push(obj.src);
-        if (jsfiles.length === loaded.length) {
-          alert('all files loaded..');
-        }
-      });
+        if (jsfiles.length === loaded.length)
+                alert("all files loaded..");
+});
+```
 
 ### re.on
 
-  Simple wrapper for addEventListener.
-  Each element that was returned by `re.find` has a method `on` attached to
-  it.
+Simple wrapper for addEventListener.
+Each element that was returned by `re.find` has a method `on` attached to
+it.
 
-      re.find('a').get(0).on(function(evt){
+```javascript
+re.find("a").get(0).on(function(evt) {
         evt.preventDefault();
-        alert('click');
-      });
+        alert("click");
+});
+```
 
 
 
 ### re.prepend
 
-  Wrapper for `insertBefore`.
+Wrapper for `insertBefore`.
 
-    var newFirstListElement = re.create('li').html('First List Element');
-    // Insert `newFirstListElement` before the first `li` found.
-    re.find('li').get(0).prepend(newFirstListElement);
+```javascript
+var newFirstListElement = re.create("li").html("First List Element");
+// Insert `newFirstListElement` before the first `li` found.
+re.find("li").get(0).prepend(newFirstListElement);
+```
 
