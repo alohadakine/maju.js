@@ -330,4 +330,5 @@ re.prototype.prev = function(el) {
 	return re.find(el.previousElementSibling).get(0);
 };
 
+re.prototype.version = "1.0.0";
 window.re = new window.re();
