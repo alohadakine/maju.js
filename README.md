@@ -17,6 +17,7 @@ re.js
   - [re.append](#reppend)
   - [re.attr](#reattr)
   - [re.before](#rebefore)
+  - [re.compareJson](#recomparejson)
   - [re.create](#recreate)
   - [re.domready](#reomready)
   - [re.find](#refind)
@@ -105,6 +106,42 @@ re.js
     var newFirstListElement = re.create('li').html('First List Element');
     // Insert `newFirstListElement` before the first `li` found.
     re.find('li').get(0).before(newFirstListElement);
+
+
+
+### re.compareJson
+
+  Compares to JSON structures and returns either `true` if they are _identical_
+  in terms of properties, or `false` if they don't have each others properties.
+
+```javascript
+var json1 = {
+        foo: true,
+        moo: false
+};
+
+var json2 = {
+        foo: true,
+        moo: false
+};
+
+var json3 = {
+        foo: true,
+        moo: true
+};
+
+var json4 = {
+        foo: false,
+        moo: false
+};
+
+// This should return true, because they are seen as "equal"
+console.log(re.compareJson(json1, json2);
+
+// This should return false, because they lack have the same
+// properties, but not the same values for each property
+console.log(re.compareJson(json3, json4);
+```
 
 
 
