@@ -21,6 +21,7 @@ re.js
   - [re.create](#recreate)
   - [re.domready](#reomready)
   - [re.find](#refind)
+  - [re.getUnixtime](#regetunixtime)
   - [re.html](#rehtml)
   - [re.loadjs](#reloadjs)
   - [re.on](#reon)
@@ -195,6 +196,16 @@ re.find("ul").get(0)
                 evt.preventDefault();
                 alert("click");
         });
+```
+
+
+
+### re.getUnixtime
+
+Returns the current UNIX-Timestamp.
+
+```javascript
+console.log(re.getUnixtime());
 ```
 
 

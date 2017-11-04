@@ -259,6 +259,10 @@ re.prototype.getFileContents = function(file, cb) {
         }
 };
 
+re.prototype.getUnixtime = function() {
+        return parseInt(Math.floor(Date.now() / 1000), 10);
+};
+
 re.prototype.html = function(el, value) {
 	var returnvalue;
 	returnvalue = el;
