@@ -263,6 +263,21 @@ re.prototype.getUnixtime = function() {
         return parseInt(Math.floor(Date.now() / 1000), 10);
 };
 
+re.prototype.getUrlParams = function(url) {
+        var params = {};
+        var link = document.createElement("a");
+        link.setAttribute("href", url);
+        var queryString = link.search;
+        if (queryString.length === 0)
+                return params;
+        if (queryString.indexOf("?") === 0)
+                queryString = queryString.substring(1);
+        queryString.split("&").forEach(function(param) {
+                var p = param.split("=");
+                params[p[0].toString()] = p[1];
+        });
+        return params;
+};
 re.prototype.html = function(el, value) {
 	var returnvalue;
 	returnvalue = el;
@@ -335,4 +350,3 @@ re.prototype.prev = function(el) {
 };
 
 re.prototype.version = "1.0.0";
-window.re = new window.re();
