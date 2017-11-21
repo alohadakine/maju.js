@@ -22,6 +22,7 @@ re.js
   - [re.domready](#reomready)
   - [re.find](#refind)
   - [re.getUnixtime](#regetunixtime)
+  - [re.getUrlParams](#regeturlparams)
   - [re.html](#rehtml)
   - [re.loadjs](#reloadjs)
   - [re.on](#reon)
@@ -206,6 +207,25 @@ Returns the current UNIX-Timestamp.
 
 ```javascript
 console.log(re.getUnixtime());
+```
+
+
+
+### re.getUrlParams
+
+Returns a URL params object.
+
+```javascript
+console.log(re.getUrlParams("index.php?param1=value1&param2=value2"));
+```
+
+Should return;
+
+```json
+{
+        param1: "value1",
+        param2: "value2"
+}
 ```
 
 
