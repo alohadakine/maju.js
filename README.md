@@ -223,8 +223,8 @@ Should return;
 
 ```json
 {
-        param1: "value1",
-        param2: "value2"
+        "param1": "value1",
+        "param2": "value2"
 }
 ```
 
