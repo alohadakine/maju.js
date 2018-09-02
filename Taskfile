@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function build {
+	cat src/re.js src/re/*.js > dist/re.js
+	minify dist/re.js > dist/re.min.js
+}
+
+function clean {
+        rm -rf ./dist/*
+}
+
+function tasks {
+        compgen -A function
+}
+
+function help {
+        echo "$0 <task> <args>"
+        echo "Tasks:"
+        tasks | cat -n
+}
+
+${@:-tasks}
+
