@@ -24,6 +24,7 @@ re.js
   - [re.getUnixtime](#regetunixtime)
   - [re.getUrlParams](#regeturlparams)
   - [re.html](#rehtml)
+  - [re.loadcss](#reloadcss)
   - [re.loadjs](#reloadjs)
   - [re.on](#reon)
   - [re.prepend](#reprepend)
@@ -236,6 +237,38 @@ Wrapper for `innerHTML`.
 
 ```javascript
 re.find("a").get(0).html("This is a Hyperlink.");
+```
+
+
+
+### re.loadcss
+
+Easy to use CSS file loader.
+Creates a `<link rel="stylesheet" href="">` tag and fires a callback function.
+
+```javascript
+re.loadcss("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.css", function(err, obj) {
+        if (err)
+                return console.log('error loading css file..');
+        alert("all good..");
+});
+```
+
+or multiple files at once..
+
+```javascript
+var cssfiles = [
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.css"
+];
+var loaded = [];
+re.loadcss(cssfiles, function(err, obj) {
+        if (err)
+                return console.log("error loading css file..");
+        loaded.push(obj.src);
+        if (cssfiles.length === loaded.length)
+                alert("all files loaded..");
+});
 ```
 
 
