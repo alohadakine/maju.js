@@ -377,4 +377,7 @@ re.prototype.prev = function(el) {
 	return re.find(el.previousElementSibling).get(0);
 };
 
+re.prototype.remove = function(el) {
+        el.parentNode.removeChild(el);
+};
 re.prototype.version = "1.0.0";

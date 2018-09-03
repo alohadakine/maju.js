@@ -28,6 +28,7 @@ re.js
   - [re.loadjs](#reloadjs)
   - [re.on](#reon)
   - [re.prepend](#reprepend)
+  - [re.remove](#reremove)
 
 
 
@@ -326,5 +327,16 @@ Wrapper for `insertBefore`.
 var newFirstListElement = re.create("li").html("First List Element");
 // Insert `newFirstListElement` before the first `li` found.
 re.find("li").get(0).prepend(newFirstListElement);
+```
+
+
+
+### re.remove
+
+Removes a node and all its children.
+
+```javascript
+// Removes the first li tag found
+re.find("li").get(0).remove();
 ```
 
